@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eeshan Bhatia - Personal Portfolio">
+    <title>Eeshan Bhatia | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="target-cursor-wrapper">
+        <div class="target-cursor-dot"></div>
+        <div class="target-cursor-corner corner-tl"></div>
+        <div class="target-cursor-corner corner-tr"></div>
+        <div class="target-cursor-corner corner-br"></div>
+        <div class="target-cursor-corner corner-bl"></div>
+    </div>
+    
+    <nav class="navigation" id="navigation">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo cursor-target">
+                <span class="logo-text">eeshb</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#bio" class="nav-link cursor-target">Bio</a></li>
+                <li><a href="#projects" class="nav-link cursor-target">Projects</a></li>
+                <li><a href="#tech" class="nav-link cursor-target">Tech</a></li>
+                <li><a href="#hobbies" class="nav-link cursor-target">Hobbies</a></li>
+                <li><a href="#contact" class="nav-link cursor-target">Contact</a></li>
+            </ul>
+            <button class="nav-toggle cursor-target" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="trippy-grid"></div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="typing-text" id="typingText"></span>
+                    </h1>
+                    <p class="hero-subheader" id="heroSubheader">Student at the University of Auckland</p>
+                    <p class="hero-degrees" id="heroDegrees">BSc(Hons) in Computer Science | BA in Philosophy</p>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Bio Section -->
+        <section class="bio-section" id="bio">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="bio-content">
+                    <p class="bio-text">
+                        I'm a Computer Science and Philosophy student at the University of Auckland. 
+                        I'm interested in Artificial Intelligence and its applications in both enterprise and consumer levels.
+                        My projects, experiences and interests focus on AI applications, web development, and exploring the philosophical implications 
+                        of technology in the digital age. I am eager to learn and grow, and this is my attempt at documenting my journey.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card cursor-target" data-project="1">
+                        <div class="project-header">
+                            <span class="project-number">01</span>
+                            <h3 class="project-title">tarot.ai</h3>
+                        </div>
+                        <p class="project-description">
+                            An AI-powered web application for tarot card readings. 
+                            Users can get generic readings, ask questions, and even learn about the cards and their meanings.
+                            Features personalized interpretations using AWS Bedrock (Claude), user authentication, and a Stripe-based subscription model.
+                            Inspired by my aunt who is a tarot and astrology enthusiast.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">AWS Bedrock</span>
+                            <span class="tech-tag">AWS Cognito</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                        <a href="https://main.d2ifu6hxlhl21l.amplifyapp.com/" class="project-link cursor-target" target="_blank" rel="noopener noreferrer">
+                            <span>View Project</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                        <div class="project-hover-bg"></div>
+                    </article>
+
+                    <article class="project-card cursor-target" data-project="2">
+                        <div class="project-header">
+                            <span class="project-number">02</span>
+                            <h3 class="project-title">Generative AI Playground</h3>
+                        </div>
+                        <p class="project-description">
+                            An interactive sandbox environment where users can trial different AI models, test and compare prompting and responses, and tweak parameters such as temperature and max tokens.
+                            Worked alongside a team of 6 where I focused on Bedrock integration and chat history functionality as well as token cost and estimation.
+                           
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">AWS Bedrock</span>
+                            <span class="tech-tag">AWS Cognito</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="https://willscookbook.nz" class="project-link cursor-target" target="_blank" rel="noopener noreferrer">
+                            <span>View Project</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                        <div class="project-hover-bg"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="tech-section" id="tech">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">Tech Stack</h2>
+                </div>
+                <div class="tech-container">
+                    <div class="tech-category">
+                        <h3 class="tech-category-title">Languages</h3>
+                        <div class="tech-items">
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">Python</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">Java</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">TypeScript</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">HTML/CSS</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-category">
+                        <h3 class="tech-category-title">Frameworks & Libraries</h3>
+                        <div class="tech-items">
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">React</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">Next.js</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">NodeJS</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">Tailwind CSS</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">PyTorch</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-category">
+                        <h3 class="tech-category-title">Tools</h3>
+                        <div class="tech-items">
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">AWS</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">Docker</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">Stripe</span>
+                            </div>
+                            <div class="tech-item cursor-target">
+                                <span class="tech-name">Power BI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section class="hobbies-section" id="hobbies">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">Hobbies & Interests</h2>
+                </div>
+                <div class="hobbies-grid">
+                    <div class="hobby-card cursor-target">
+                        <h3 class="hobby-title">Philosophy</h3>
+                        <p class="hobby-description">
+                            The other half of my conjoint degree is Philosophy. 
+                            Specifically, I'm interested in ethics, greek philosophy, metaphysics, and Nietzsche, as well as how these concepts can relate to the modern digital/AI era.
+                        </p>
+                    </div>
+                    <a href="https://soundcloud.com/eeshbeatz" class="hobby-card cursor-target" target="_blank" rel="noopener noreferrer">
+                        <h3 class="hobby-title">Music Production</h3>
+                        <p class="hobby-description">
+                            I produce music using FL Studio (not musically trained). 
+                            Most of my music falls loosely under 'hip-hop'.
+                            Click this box to check out my SoundCloud!
+                        </p>
+                    </a>
+                    <a href="https://op.gg/tft/summoners/oce/eeshcapiche-6767" class="hobby-card cursor-target" target="_blank" rel="noopener noreferrer">
+                        <h3 class="hobby-title">Gaming</h3>
+                        <p class="hobby-description">
+                            Retired hardcore gamer, now only playing TFT and single-player games.
+                            I used to play LoL, Valorant, CS, OW, etc. 
+                            Peaked GM in set 15 TFT. 
+                            Click this box to check out my OP.GG!
+                        </p>
+                    </a>
+                    <div class="hobby-card cursor-target">
+                        <h3 class="hobby-title">Gym</h3>
+                        <p class="hobby-description">
+                            I try to work-out at the gym around 3-4 times per week and do some cardio on rest days. Focused on hypertrophy.
+                            All-time PRs: 90kg bench, 160kg squat, 160kg deadlift.
+                        </p>
+                    </div>
+                    <div class="hobby-card cursor-target">
+                        <h3 class="hobby-title">Reading</h3>
+                        <p class="hobby-description">
+                            Forgotten and returning hobby from my childhood. My goal is to be able to read 2 books a month.
+                            Current favorite book: "The Picture of Dorian Gray" by Oscar Wilde.
+                        </p>
+                    </div>
+                    <div class="hobby-card cursor-target">
+                        <h3 class="hobby-title">Language Acquisition</h3>
+                        <p class="hobby-description">
+                            Currently learning Japanese and Spanish. 
+                            Fluent in Hindi, Gujurati, and the one they speak in the UK. 
+                            Keen to learn Mandarin, French, or Latin in the future.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">Contact Info</h2>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-methods">
+                            <a href="mailto:eeshan.bhatia.2003@gmail.com" class="contact-link cursor-target">
+                                <span>E-Mail: eeshan.bhatia.2003@gmail.com</span>
+                            </a>
+                            <a href="tel:+64212611558" class="contact-link cursor-target">
+                                <span>Phone: 021 261 1558</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/eeshan-bhatia-536775258/" class="contact-link cursor-target" target="_blank" rel="noopener noreferrer">
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/eeshan-bhatia" class="contact-link cursor-target" target="_blank" rel="noopener noreferrer">
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cv-viewer">
+                        <h3 class="cv-subheader">Here is a copy of my resume, feel free to download it: </h3>
+                        <embed src="Eeshan Bhatia - CV (2).pdf" type="application/pdf" class="cv-pdf" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Eeshan Bhatia. No rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
