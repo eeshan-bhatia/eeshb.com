@@ -334,6 +334,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const fullText = firstName + lastName;
         const delay = 100;
         let currentIndex = 0;
+
+        typingText.textContent = '';
         
         function typeCharacter() {
             if (currentIndex < fullText.length) {

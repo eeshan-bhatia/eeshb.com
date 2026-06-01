@@ -1432,10 +1432,6 @@ html {
     }
 }
 
-/* ============================================
-   Accessibility
-   ============================================ */
-
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -1450,7 +1446,7 @@ html {
     }
 }
 
-/* Focus styles for accessibility */
+
 a:focus,
 button:focus,
 input:focus,
