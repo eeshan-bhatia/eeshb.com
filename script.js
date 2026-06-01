@@ -63,27 +63,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ============================================
-    // Target Cursor Effect
+    // Target Cursor Effect (GSAP must load immediately before this file)
     // ============================================
     
-    // Wait for GSAP to load
     function initTargetCursor() {
-        if (typeof gsap === 'undefined') {
-            setTimeout(initTargetCursor, 50);
+        const gsap = window.gsap;
+        if (!gsap) {
             return;
         }
+
         const cursorRef = document.querySelector('.target-cursor-wrapper');
         const dotRef = document.querySelector('.target-cursor-dot');
         const cornersRef = cursorRef ? cursorRef.querySelectorAll('.target-cursor-corner') : null;
         
         // Check if mobile
         const isMobile = () => {
-            const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
             const isSmallScreen = window.innerWidth <= 768;
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
             const mobileRegex = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
-            const isMobileUserAgent = mobileRegex.test(userAgent.toLowerCase());
-            return (hasTouchScreen && isSmallScreen) || isMobileUserAgent;
+            return isSmallScreen || mobileRegex.test(userAgent.toLowerCase());
         };
         
         if (!isMobile() && cursorRef && dotRef && cornersRef && cornersRef.length === 4) {
@@ -118,6 +116,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 x: window.innerWidth / 2,
                 y: window.innerHeight / 2
             });
+
+            cursorRef.classList.add('cursor-ready');
             
             const createSpinTimeline = () => {
                 if (spinTl) {

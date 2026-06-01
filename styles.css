@@ -91,7 +91,13 @@ html {
     pointer-events: none;
     z-index: 9999;
     mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.target-cursor-wrapper.cursor-ready {
+    opacity: 1;
+    visibility: visible;
 }
 
 .target-cursor-dot {
