@@ -147,8 +147,11 @@ html {
 }
 
 @media (max-width: 768px) {
-    .target-cursor-wrapper {
-        display: none;
+    .target-cursor-wrapper,
+    .target-cursor-wrapper.cursor-ready {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
     }
 }
 

@@ -66,6 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Target Cursor Effect (GSAP must load immediately before this file)
     // ============================================
     
+    function shouldUseCustomCursor() {
+        return window.matchMedia('(min-width: 769px) and (hover: hover) and (pointer: fine)').matches;
+    }
+
     function initTargetCursor() {
         const gsap = window.gsap;
         if (!gsap) {
@@ -75,16 +79,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const cursorRef = document.querySelector('.target-cursor-wrapper');
         const dotRef = document.querySelector('.target-cursor-dot');
         const cornersRef = cursorRef ? cursorRef.querySelectorAll('.target-cursor-corner') : null;
+
+        if (!shouldUseCustomCursor()) {
+            if (cursorRef) {
+                cursorRef.classList.remove('cursor-ready');
+            }
+            document.body.style.cursor = '';
+            return;
+        }
         
-        // Check if mobile
-        const isMobile = () => {
-            const isSmallScreen = window.innerWidth <= 768;
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            const mobileRegex = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
-            return isSmallScreen || mobileRegex.test(userAgent.toLowerCase());
-        };
-        
-        if (!isMobile() && cursorRef && dotRef && cornersRef && cornersRef.length === 4) {
+        if (cursorRef && dotRef && cornersRef && cornersRef.length === 4) {
             const targetSelector = '.cursor-target';
             const spinDuration = 2;
             const hideDefaultCursor = true;
